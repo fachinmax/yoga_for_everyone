@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+
+{% block nav %}
+    <a href="/">Home page</a>
+{% endblock %}
+
+{% block main %}
+    <header>
+        {% if user == 'user' %}
+            <a href="/history/{{ address }}"><h1>History of your bids</h1></a>
+            <a href="/send-ether/{{ address }}"><h1>Bids you winned</h1></a>
+        {% else %}
+            <a href="/history/{{ address }}"><h1>History of all users bids</h1></a>
+            <a href="/images/{{ address }}"><h1>Upload images</h1></a>
+        {% endif %}
+    </header>
+    {% block history-win %}
+    {% endblock %}
+    <script type="text/javascript" src="{% static 'userAccount.js' %}"></script>
+{% endblock %}

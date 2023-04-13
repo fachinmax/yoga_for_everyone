@@ -1,0 +1,16 @@
+{% extends "base-user.html" %}
+
+
+{% block history-win %}
+    <main class="display-flex-history">
+        {% for auction in auctions %}
+            <article class="item">
+                <h1>{{ auction }}</h1>
+                <form action="/images/{{ address }}/{{ auction.pk }}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="images" multiple><br />
+                    <button class="partecipate-button" type="submit">Upload images</button>
+                </form>
+            </article>
+        {% endfor %}
+    </main>
+{% endblock %}

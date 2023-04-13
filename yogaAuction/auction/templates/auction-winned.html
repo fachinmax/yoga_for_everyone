@@ -1,0 +1,13 @@
+{% extends "base-user.html" %}
+
+
+{% block history-win %}
+    <main class="display-flex-history">
+        {% for auction in auctions %}
+            <article class="item">
+                <h1>{{ auction }}</h1>
+                <button onclick="sendEther({{ auction.price }}, {{ auction.pk }})">Send {{ auction.price }} Wei</button>
+            </article>
+        {% endfor %}
+    </main>
+{% endblock %}

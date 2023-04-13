@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+
+{% block main %}
+  <main class="display-grid">
+    {% for auction in auction_objects %}
+      <a href="{% url 'auction_detail' pk=auction.pk %}" class="item auction-item">
+        <article>
+          <figure>
+            <img src="/media/{{ auction.images.all.0.name }}" alt="{{ auction }}" />
+          </figure>
+          <h1>{{ auction }}</h1>
+          <time>End to {{ auction.end }}</time>
+        </article>
+      </a>
+    {% endfor %}
+    <script type="text/javascript" src="{% static 'userAccount.js' %}"></script>
+  </main>
+{% endblock %}

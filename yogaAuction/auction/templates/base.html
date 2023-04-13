@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'general.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'home-page.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'history.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'auction-detail.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'upload-images.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" size="32x32" href="../../media/lotus.png" />
+    <link
+      href="{% static 'home-page.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Yoga per tutti</title>
+  </head>
+  <body>
+    <nav>
+      {% block nav %}
+      {% endblock %}
+    </nav>
+    {% block main %}
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  </body>
+</html>

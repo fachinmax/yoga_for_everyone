@@ -1,0 +1,21 @@
+{% extends "base-user.html" %}
+
+
+{% block history-win %}
+    <main class="display-flex-history">
+        {% for auction in auctions %}
+            <article class="item">
+                <h1>{{ auction.0.auction }}</h1>
+                <ul>
+                    {% for bid in auction %}
+                        {% if user == 'user' %}
+                            <li>You bidded {{ bid.wei.amount }} {{ bid.wei.unit }}</li>
+                        {% else %}
+                            <li>{{ bid.address }} bidded {{ bid.wei.amount }} {{ bid.wei.unit }}.</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </article>
+        {% endfor %}
+    </main>
+{% endblock %}

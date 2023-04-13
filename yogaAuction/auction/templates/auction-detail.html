@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block nav %}
+    <a href="/">Home page</a>
+{% endblock %}
+
+{% block main %}
+    <main class="display-flex-auction-detail">
+        <section id="product">
+            <h1>{{ auction.title }}</h1>
+            <div id="images">
+                {% for image in auction.images.all %}
+                    <figure>
+                        <img src="/media/{{ image.name }}" alt="image" />
+                    </figure>
+                {% endfor %}
+            </div>
+            <h3>Description</h3>
+            <p id="description">{{ auction.description }}</p>
+        </section>
+        <section id="auction">
+            <h1>Auction informations</h1>
+            <section id="price-section">
+                <h1 class="sub-title-section">Price</h1>
+                <p id="price">{{ price.amount }} {{ price.unit }}</p>
+            </section>
+            <section  id="end-section">
+                <h1 class="sub-title-section">Close to</h1>
+                <time>{{ time }}</time>
+            </section>
+            <section id="partecipate-section">
+                <button class="partecipate-button" onclick="connect()">Partecipate to the auction</button>
+            </section>
+            <section id="all-bids">
+                <ul></ul>
+            </section>
+        </section>
+    </main>
+    <script type="text/javascript" src="{% static 'index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'userAccount.js' %}"></script>
+{% endblock %}

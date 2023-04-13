@@ -1,0 +1,22 @@
+ul {
+    list-style-type: none;
+}
+
+article ul li { 
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.display-flex-history {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
